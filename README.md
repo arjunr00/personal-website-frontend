@@ -1,6 +1,11 @@
 # Website Template
 
-This repository contains a basic template for a React-based website written in TypeScript and Sass, with Webpack for bundling.
+This is a React-based frontend for my personal website at [*TBA*](example.com).
+Everything's written in TypeScript and Sass, with Webpack for bundling.
+
+## Design
+
+I have a design for this website over on Figma, available [here](https://www.figma.com/file/XBzmHgzkKn8wXyH6EJAW9r/Personal-Website?node-id=0%3A1).
 
 ## Usage
 
