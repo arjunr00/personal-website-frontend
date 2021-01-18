@@ -1,13 +1,18 @@
 {
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js --host=0.0.0.0",
-    "build": "webpack --config webpack.prod.js",
-    "lint": "npx eslint '**/*.tsx' '**/*.ts' && npx stylelint '**/*.css' '**/*.scss'"
+    "svgo": "svgo src/assets/logo.orig.svg -o src/assets/logo.svg --config=./svgo.yml",
+    "pre": "yarn svgo",
+
+    "start": "yarn pre && webpack-dev-server --open --config webpack.dev.js --host=0.0.0.0",
+    "build": "yarn pre && webpack --config webpack.prod.js",
+    "lint": "npx eslint --no-error-on-unmatched-pattern '**/*.tsx' '**/*.ts' && npx stylelint '**/*.css' '**/*.scss'"
   },
   "dependencies": {
+    "@types/animejs": "^3.1.2",
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
+    "animejs": "^3.2.1",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-react": "^7.20.5",
@@ -33,6 +38,7 @@
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "raw-loader": "^4.0.2",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",

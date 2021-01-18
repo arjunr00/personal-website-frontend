@@ -1,10 +1,14 @@
 import React from 'react';
 
+import Logo from './Logo';
+
 import './styles/App.scss';
 
-function App(): React.Component {
+function App(): JSX.Element {
   return(
-    <div><h1>Hello world</h1></div>
+    <div id={'main-container'}>
+      <Logo />
+    </div>
   );
 }
 

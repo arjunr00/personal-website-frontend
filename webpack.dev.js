@@ -20,13 +20,19 @@ module.exports = merge(common, {
         ],
       },
       {
-        test: /\.(png|svg|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         use: {
           loader: 'file-loader',
           options: {
             name: 'assets/[name].[ext]',
           },
         },
+      },
+      {
+        test: /\.svg$/i,
+        use: [
+          'raw-loader'
+        ],
       },
     ],
   },

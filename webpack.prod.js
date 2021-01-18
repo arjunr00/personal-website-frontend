@@ -20,7 +20,7 @@ module.exports = merge(common, {
         ],
       },
       {
-        test: /\.(png|svg|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         use: {
           loader: 'url-loader',
           options: {
@@ -28,6 +28,13 @@ module.exports = merge(common, {
             limit: 8192,
           },
         },
+      },
+      {
+        test: /\.svg$/i,
+        exclude: /orig\.svg$/i,
+        use: [
+          'raw-loader'
+        ],
       },
     ],
   },

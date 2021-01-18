@@ -1,0 +1,4 @@
+plugins:
+  - mergePaths: false
+  - cleanupIDs: false
+  - removeDimensions: true
