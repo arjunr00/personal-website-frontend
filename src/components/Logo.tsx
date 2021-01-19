@@ -1,14 +1,19 @@
 import anime, { AnimeTimelineInstance } from 'animejs';
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
+
+import { AppContext, Theme } from './App';
 
 import './styles/Logo.scss';
 
 import LogoSvg from '../assets/logo.svg';
+import LogoDarkSvg from '../assets/logo_dark.svg';
 
 function Logo(): JSX.Element {
   const ANIM_MAIN_STEP_DURATION = 500;
   const ANIM_INIT_STEP_DURATION = ANIM_MAIN_STEP_DURATION;
   const ANIM_MAIN_START = 1.5 * ANIM_INIT_STEP_DURATION;
+
+  const theme = useContext(AppContext).theme;
 
   const animTimelineRef = useRef<AnimeTimelineInstance | null>(null);
 
@@ -87,7 +92,7 @@ function Logo(): JSX.Element {
     }, `-=${ANIM_MAIN_STEP_DURATION}`);
 
     animTimelineRef.current = timeline;
-  }, []);
+  }, [ theme ]);
 
   return(
     <div
@@ -95,7 +100,9 @@ function Logo(): JSX.Element {
     >
       <div
         id='logo'
-        dangerouslySetInnerHTML={{__html: LogoSvg}}
+        dangerouslySetInnerHTML={{
+          __html: theme === Theme.DARK ? LogoDarkSvg : LogoSvg
+        }}
       >
       </div>
     </div>
