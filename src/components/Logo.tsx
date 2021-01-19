@@ -15,6 +15,7 @@ function Logo(): JSX.Element {
   useEffect(() => {
     const timeline: AnimeTimelineInstance = anime.timeline();
 
+    // Pop in circles (staggered)
     timeline.add({
       easing: 'easeOutBack',
       targets: '.fill',
@@ -23,6 +24,7 @@ function Logo(): JSX.Element {
       delay: anime.stagger(ANIM_INIT_STEP_DURATION / 3),
     }, 0);
 
+    // reveal circle outlines
     timeline.add({
       easing: 'easeInOutSine',
       targets: '#a_bot_outline, #a_top_outline, #r_outline',
@@ -34,6 +36,7 @@ function Logo(): JSX.Element {
       delay: anime.stagger(ANIM_INIT_STEP_DURATION / 3),
     }, ANIM_INIT_STEP_DURATION);
 
+    // Draw bottom arc of a
     timeline.add({
       easing: 'easeInSine',
       targets: '#a_bot_arc',
@@ -46,6 +49,7 @@ function Logo(): JSX.Element {
       duration: ANIM_MAIN_STEP_DURATION,
     }, ANIM_MAIN_START);
 
+    // Draw top arc of a outwards from center as bottom arc finishes
     timeline.add({
       easing: 'easeOutSine',
       targets: '#a_top_arc',
@@ -53,6 +57,7 @@ function Logo(): JSX.Element {
       duration: ANIM_MAIN_STEP_DURATION,
     }, ANIM_MAIN_START + ANIM_MAIN_STEP_DURATION);
 
+    // Draw r arc outwards from center along with top arc of a
     timeline.add({
       easing: 'easeOutSine',
       targets: '#r_arc',
@@ -65,6 +70,7 @@ function Logo(): JSX.Element {
       duration: 2 * ANIM_MAIN_STEP_DURATION / 3,
     }, ANIM_MAIN_START + 5 * ANIM_MAIN_STEP_DURATION / 4);
 
+    // Draw stem bottom up to match top arc of a and r
     timeline.add({
       easing: 'easeOutSine',
       targets: '#stem',
@@ -72,6 +78,7 @@ function Logo(): JSX.Element {
       duration: 3 * ANIM_MAIN_STEP_DURATION / 4,
     }, ANIM_MAIN_START + ANIM_MAIN_STEP_DURATION);
 
+    // Pop in extra fill to mask gap between stem and bottom of a
     timeline.add({
       easing: 'linear',
       targets: '#a_bot_extra_fill',
