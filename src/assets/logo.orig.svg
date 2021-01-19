@@ -55,7 +55,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -90,11 +90,11 @@
        class="fill" />
     <path
        id="a_top_outline"
-       style="display:inline;fill:none;fill-opacity:1;stroke:#a9c4f9;stroke-width:14.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#a9c4f9;stroke-width:14.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke-linecap:round"
        d="m 364.32124,128.99687 a 32.834152,32.834152 0 0 0 -32.83415,-32.83415 32.834152,32.834152 0 0 0 -32.83415,32.83415 32.834152,32.834152 0 0 0 32.83415,32.83415 32.834152,32.834152 0 0 0 32.83415,-32.83415 z" />
     <path
        id="r_outline"
-       style="display:inline;fill:none;fill-opacity:1;stroke:#a9c4f9;stroke-width:14.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:none;fill-opacity:1;stroke:#a9c4f9;stroke-width:14.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke-linecap:round"
        d="m 430.25972,128.99687 a 32.834152,32.834152 0 0 0 -32.83415,-32.83415 32.834152,32.834152 0 0 0 -32.83415,32.83415 32.834152,32.834152 0 0 0 32.83415,32.83415 32.834152,32.834152 0 0 0 32.83415,-32.83415 z" />
     <g
        id="a_bot_outline_g"
@@ -102,7 +102,7 @@
        transform="translate(2469.8919,-14.527263)">
       <path
          id="a_bot_outline"
-         style="fill:none;fill-opacity:1;stroke:#a9c4f9;stroke-width:14.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#a9c4f9;stroke-width:14.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke-linecap:round"
          transform="scale(1,-1)"
          d="m -2105.5621,-209.46014 a 32.834152,32.834152 0 0 1 -32.8341,32.83415 32.834152,32.834152 0 0 1 -32.8342,-32.83415 32.834152,32.834152 0 0 1 32.8342,-32.83416 32.834152,32.834152 0 0 1 32.8341,32.83416 z" />
       <path
