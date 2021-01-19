@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "svgo": "svgo src/assets/logo.orig.svg -o src/assets/logo.svg --config=./svgo.yml",
+    "svgo": "svgo -f src/assets/preoptimized -o src/assets/ --config=./svgo.yml",
     "pre": "yarn svgo",
 
     "start": "yarn pre && webpack-dev-server --open --config webpack.dev.js --host=0.0.0.0",

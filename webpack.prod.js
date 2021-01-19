@@ -31,7 +31,9 @@ module.exports = merge(common, {
       },
       {
         test: /\.svg$/i,
-        exclude: /orig\.svg$/i,
+        exclude: [
+          path.resolve(__dirname, './src/assets/preoptimized/')
+        ],
         use: [
           'raw-loader'
         ],
