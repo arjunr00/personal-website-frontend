@@ -1,14 +1,18 @@
 import anime, { AnimeTimelineInstance } from 'animejs';
 import React, { useContext, useEffect, useRef } from 'react';
 
+import LogoSvg from '../assets/logo.svg';
+import LogoDarkSvg from '../assets/logo_dark.svg';
+
 import { AppContext, Theme } from './App';
 
 import './styles/Logo.scss';
 
-import LogoSvg from '../assets/logo.svg';
-import LogoDarkSvg from '../assets/logo_dark.svg';
+interface LogoProps {
+  onAnimationEnd: () => void;
+}
 
-function Logo(): JSX.Element {
+function Logo(props: LogoProps): JSX.Element {
   const ANIM_MAIN_STEP_DURATION = 500;
   const ANIM_INIT_STEP_DURATION = ANIM_MAIN_STEP_DURATION;
   const ANIM_MAIN_START = 1.5 * ANIM_INIT_STEP_DURATION;
@@ -18,7 +22,11 @@ function Logo(): JSX.Element {
   const animTimelineRef = useRef<AnimeTimelineInstance | null>(null);
 
   useEffect(() => {
-    const timeline: AnimeTimelineInstance = anime.timeline();
+    const timeline: AnimeTimelineInstance = anime.timeline({
+      complete: () => {
+        props.onAnimationEnd();
+      },
+    });
 
     // Pop in circles (staggered)
     timeline.add({
@@ -101,7 +109,7 @@ function Logo(): JSX.Element {
       <div
         id='logo'
         dangerouslySetInnerHTML={{
-          __html: theme === Theme.DARK ? LogoDarkSvg : LogoSvg
+          __html: theme === Theme.DARK ? LogoDarkSvg : LogoSvg,
         }}
       >
       </div>

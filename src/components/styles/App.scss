@@ -1,5 +1,7 @@
+@import 'variables';
+
 #main-container {
-  background-color: #fff;
+  background-color: $bg-light;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -8,7 +10,7 @@
 }
 
 #main-container.dark {
-  background-color: #181a1b;
+  background-color: $bg-dark;
 }
 
 #toggle-theme-btn {

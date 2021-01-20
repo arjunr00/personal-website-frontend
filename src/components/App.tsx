@@ -1,17 +1,18 @@
 import React, { createContext, useState } from 'react';
 
-import Logo from './Logo';
+import ThemedDiv from './helper/ThemedDiv';
+import Title from './Title';
 
 import './styles/App.scss';
 
 export enum Theme {
   DARK, LIGHT
-};
+}
 
 interface AppContextData {
   theme?: Theme,
   setTheme?: React.Dispatch<React.SetStateAction<Theme>>
-};
+}
 
 export const AppContext = createContext<AppContextData>({});
 
@@ -22,23 +23,22 @@ function App(): JSX.Element {
     <AppContext.Provider
       value={{
         theme: theme,
-        setTheme: setTheme
+        setTheme: setTheme,
       }}
     >
-      <div
+      <ThemedDiv
         id='main-container'
-        className={(theme === Theme.DARK) ? ' dark' : ''}
       >
         <button
           id='toggle-theme-btn'
-          onClick={_ => {
+          onClick={() => {
             setTheme(old => old === Theme.DARK ? Theme.LIGHT : Theme.DARK);
           }}
         >
           Toggle Theme
         </button>
-        <Logo />
-      </div>
+        <Title />
+      </ThemedDiv>
     </AppContext.Provider>
   );
 }
