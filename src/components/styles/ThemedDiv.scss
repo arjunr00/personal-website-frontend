@@ -1,0 +1,9 @@
+@import 'variables';
+
+.dark {
+  transition: color 0.2s;
+}
+
+.dark * {
+  color: $fg-dark;
+}
