@@ -1,5 +1,8 @@
 @import 'variables';
 
+$sep-height: 22vh;
+$sep-margin: 4vw;
+
 #title-container {
   display: flex;
   flex-direction: row;
@@ -12,14 +15,14 @@
   align-items: flex-start;
   overflow: hidden;
   transform-origin: left;
-  padding-left: 3vw;
+  padding-left: $sep-margin;
 }
 
 #separator {
-  height: 25vh;
   width: 5px;
+  height: $sep-height;
   background-color: $fg-light;
-  margin-left: 3vw;
+  margin-left: $sep-margin;
   border-radius: 5px;
 }
 
